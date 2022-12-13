@@ -2,7 +2,32 @@ name: 'chronic_disease_grouper'
 version: '1.0.0'
 config-version: 2
 
-profile: 'tuva-snowflake'
+profile: 'firsthand'
+
+vars:
+
+  source_name: tuva_core                  # configuration required
+                                       # name describing the dataset feeding
+                                       # this project - typically matches input
+                                       # schema name
+
+  input_database: transformed_data               # configuration required
+                                     # name of the database where sources
+                                     # feeding this project are stored
+
+  input_schema: tuva_core                 # configuration required
+                                     # name of the schema where sources
+                                     # feeding this project is stored
+
+  output_database: transformed_data              # configuration required
+                                     # name of the database where output of
+                                     # this project should be written
+
+  output_schema: tuva_chronic_conditions  # configuration required
+                                     # name of the schema where output of this
+                                     # project should be written
+
+  condition: "{{ source(var('source_name'),'condition') }}"                                     
 
 
 

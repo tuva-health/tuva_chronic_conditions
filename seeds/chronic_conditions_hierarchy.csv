@@ -1,4 +1,4 @@
-disease_family,disease,icd_10_cm_code,icd_10_cm_description
+condition_family,condition,icd_10_cm_code,icd_10_cm_description
 Cancer,Breast Cancer,C50011,"Malignant neoplasm of nipple and areola, right female breast"
 Cancer,Breast Cancer,C50012,"Malignant neoplasm of nipple and areola, left female breast"
 Cancer,Breast Cancer,C50019,"Malignant neoplasm of nipple and areola, unspecified female breast"

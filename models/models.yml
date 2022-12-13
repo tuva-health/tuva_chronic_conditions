@@ -1,0 +1,46 @@
+version: 2
+
+models:
+    - name: chronic_condition_groups
+      description: This model rolls up the chronic conditions hierarchy one level to just show the conditions and condition families.
+      config:
+        database: "{{ var('output_database') }}"
+        schema: "{{ var('output_schema') }}"
+
+      columns:
+          - name: condition_family
+            description: A higher level rollup grouping of conditions from the condition column
+
+          - name: condition
+            description: The name of the condition that each diagnosis code rolls up into
+            tests:
+              - unique
+              - not_null
+
+    - name: chronic_conditions_long
+      description: This model creates one record per patient per condition using the tuva chronic conditions hierarchy as the grouper. The model pulls in the first and last date of the diagnosis that flagged the patient for this condition group.
+      config:
+        database: "{{ var('output_database') }}"
+        schema: "{{ var('output_schema') }}"
+
+      columns:
+          - name: patient_id
+            description: The unique identifier for a patient
+
+          - name: condition_family
+            description: A higher level rollup grouping of conditions from the condition column
+
+          - name: condition
+            description: The name of the condition that each diagnosis code rolls up to
+
+          - name: first_diagnosis_date
+            description: The first date when a diagnosis code that rolls up to this condition was coded to this patient
+
+          - name: last_diagnosis_date
+            description: The last date when a diagnosis code that rolls up to this condition was coded to this patient
+
+    - name: chronic_conditions_wide
+      description: This model creates one record per patient with flags for all the conditions in the tuva chronic conditions hierarchy. A patient will have a 1 in the column for a certain condition if they have every been coded with a diagnosis that rolls up to that condition and a 0 if not.
+      config:
+        database: "{{ var('output_database') }}"
+        schema: "{{ var('output_schema') }}"

@@ -9,7 +9,6 @@ with condition_row_number as
         ,row_number() over(partition by patient_id, code order by condition_date asc) as rn_asc
         ,row_number() over(partition by patient_id, code order by condition_date desc) as rn_desc
     from {{var('condition')}}
-    where code_type = 'icd-10-cm'
 )
 , patient_conditions as
 (

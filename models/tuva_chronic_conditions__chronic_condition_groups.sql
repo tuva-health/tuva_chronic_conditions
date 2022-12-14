@@ -3,7 +3,7 @@
 select distinct 
     condition_family
     ,condition
-from {{ref('chronic_conditions_hierarchy')}}
+from {{ref('tuva_chronic_conditions__chronic_conditions_hierarchy')}}
 order by 
     condition_family
     ,condition

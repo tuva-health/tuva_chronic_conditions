@@ -14,7 +14,7 @@ vars:
 
 
 ## optional input config
-  tuva_chronic_conditions_condition_override: "condition"
+  tuva_chronic_conditions_condition_override: "{{ ref('condition')}}"
 
 
 
@@ -28,7 +28,7 @@ vars:
 
 dispatch:
   - macro_namespace: dbt
-    search_order: [ 'the_tuva_project', 'dbt']
+    search_order: [ 'tuva_chronic_conditions', 'dbt']
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]

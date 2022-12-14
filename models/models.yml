@@ -22,6 +22,9 @@ models:
       config:
         database: "{{ var('output_database') }}"
         schema: "{{ var('output_schema') }}"
+      tests:
+        - unique:
+            column_name: "(patient_id || '_' || condition)"
 
       columns:
           - name: patient_id
@@ -44,3 +47,8 @@ models:
       config:
         database: "{{ var('output_database') }}"
         schema: "{{ var('output_schema') }}"
+      tests:
+        - unique:
+            column_name: patient_id
+        - not_null:
+            column_name: patient_id

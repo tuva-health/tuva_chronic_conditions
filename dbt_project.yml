@@ -1,8 +1,8 @@
-name: 'chronic_disease_grouper'
+name: 'tuva_chronic_conditions'
 version: '1.0.0'
 config-version: 2
 
-profile: 'firsthand'
+profile: 'tuva_chronic_conditions'
 
 vars:
 
@@ -11,15 +11,15 @@ vars:
                                        # this project - typically matches input
                                        # schema name
 
-  input_database: transformed_data               # configuration required
+  input_database: tuva               # configuration required
                                      # name of the database where sources
                                      # feeding this project are stored
 
-  input_schema: tuva_core                 # configuration required
+  input_schema: core                 # configuration required
                                      # name of the schema where sources
                                      # feeding this project is stored
 
-  output_database: transformed_data              # configuration required
+  output_database: tuva              # configuration required
                                      # name of the database where output of
                                      # this project should be written
 

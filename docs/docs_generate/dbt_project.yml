@@ -1,13 +1,15 @@
-name: 'tuva_chronic_conidition_input'
+name: 'tuva_chronic_conditions_input'
 version: '1.0.0'
 config-version: 2
 
 profile: 'default'
 
+vars:
+  tuva_chronic_conditions_condition_override: "{{ ref('condition')}}"
 
 dispatch:
   - macro_namespace: dbt
-    search_order: [ 'tuva_chronic_conidition_input', 'dbt']
+    search_order: [ 'tuva_chronic_conditions', 'dbt']
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]

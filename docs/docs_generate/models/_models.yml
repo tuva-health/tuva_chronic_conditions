@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: condition
+    config:
+      database: tuva
+      schema: tuva_chronic_condition_input
+    description: > 
+      The Tuva chronic conditions package uses the condition output from claims_preprocessing as an input.  
+      If claims preprocessing is bypassed and a custom condition model is used, this model represents the minimum required data elements needed for readmissions to function.
+    columns:
+      - name: patient_id
+        description: The unique identifier for a patient
+      - name: code
+        description: An ICD-10-CM diagnosis code associated with this encounter_id
+      - name: condition_date
+        description: The date associated with the diagnosis

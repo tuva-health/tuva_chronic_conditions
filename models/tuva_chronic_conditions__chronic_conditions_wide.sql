@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(enabled = var('tuva_chronic_conditions_enabled',var('tuva_packages_enabled',True)) ) }}
 
 select
     patient_id

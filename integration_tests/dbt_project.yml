@@ -1,0 +1,49 @@
+name: 'integration_tests'
+version: '1.0.0'
+config-version: 2
+
+profile: 'default'
+
+
+
+vars:
+
+## optional output config option 1 (all tuva packages)
+  tuva_database: dev_thuxuan
+#  tuva_schema_prefix: test
+
+
+## optional input config
+  tuva_chronic_conditions_condition_override: "condition"
+
+
+
+### optional overrides for sources only for integration_tests
+#  claims_preprocessing_input_database: tuva
+#  claims_preprocessing_input_schema: test_claims_input
+#  data_profiling_input_database: tuva
+#  data_profiling_input_schema: test_claims_input
+
+
+
+dispatch:
+  - macro_namespace: dbt
+    search_order: [ 'the_tuva_project', 'dbt']
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  integration_tests:
+    +materialized: ephemeral

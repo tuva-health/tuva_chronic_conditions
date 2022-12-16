@@ -4,7 +4,7 @@
 
 The Tuva Project's Tuva Chronic Conditions data mart groups patients into one or more of 40 distinct chronic conditions and 8 condition families.  We created this grouper because we found problems with the CMS Chronic Condition grouper.
 
-For information on data models and to view the entire DAG check out our dbt Docs.
+For information on data models and to view the entire DAG check out our dbt [Docs](https://tuva-health.github.io/tuva_chronic_conditions/#!/overview).
 
 ## 🔌 What databases are supported?
 
@@ -27,7 +27,7 @@ The Tuva Project is a collection of dbt packages that build healthcare concepts 
 
 ### **Step 1:**
 
-First, you must create the necessary input tables as models within your dbt project so that the Tuva package of interest can reference them using ref() functions. To run this Tuva Chronic Conditions package, you must create 1 table as a model within your dbt project.
+First, you must create the necessary input tables as models within your dbt project so that the Tuva package of interest can reference them using ref() functions. To run this Tuva Chronic Conditions package, you must create [1 table](https://tuva-health.github.io/tuva_chronic_conditions/#!/model/model.tuva_chronic_conditions_input.condition) as a model within your dbt project.
 
 ### **Step 2:**
 

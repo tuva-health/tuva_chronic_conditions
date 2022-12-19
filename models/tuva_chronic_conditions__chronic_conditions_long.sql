@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(enabled = var('tuva_chronic_conditions_enabled',var('tuva_packages_enabled',True)) ) }}
 
 with condition_row_number as
 (
@@ -29,7 +29,7 @@ select
     ,h.condition
     ,min(first_diagnosis_date) as first_diagnosis_date
     ,max(last_diagnosis_date) as last_diagnosis_date
-from {{ref('chronic_conditions_hierarchy')}} h
+from {{ref('tuva_chronic_conditions__chronic_conditions_hierarchy')}} h
 inner join patient_conditions pc
     on h.icd_10_cm_code = pc.icd_10_cm
 group by 

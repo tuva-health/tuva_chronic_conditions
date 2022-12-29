@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: core
+    database: "{{ var('tuva_chronic_conditions_input_database','tuva') }}"
+    schema:  "{{ var('tuva_chronic_conditions_input_schema','core') }}"
+    tables:
+      - name: condition

@@ -1,5 +1,1 @@
-select
-patient_id
-,code
-,condition_date
-from tuva.core.condition
+select * from {{source('core','condition')}}

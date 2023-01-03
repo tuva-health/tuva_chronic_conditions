@@ -1,6 +1,6 @@
 # Tuva Chronic Conditions
 
-## 🧰 What does this project do?
+# 🧰 What does this project do?
 
 The Tuva Project's Tuva Chronic Conditions data mart groups patients into one or more of 40 distinct chronic conditions and 8 condition families.  We created this grouper because we found problems with the CMS Chronic Condition grouper.
 

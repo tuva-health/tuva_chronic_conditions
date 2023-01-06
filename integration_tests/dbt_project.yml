@@ -4,6 +4,12 @@ config-version: 2
 
 profile: 'default'
 
+vars:
+  tuva_chronic_conditions_input_schema: core
+  tuva_chronic_conditions_input_database: dev_forrest
+
+  tuva_database: dev_forrest
+
 
 
 dispatch:

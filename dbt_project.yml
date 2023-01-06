@@ -1,15 +1,15 @@
 name: 'tuva_chronic_conditions'
-version: '0.0.1'
+version: '0.0.2'
 config-version: 2
 
 profile: 'default'
 
 vars:
-    condition: |
+    condition: >
         {% if var('tuva_chronic_conditions_condition_override',none) is not none %}{{var('tuva_chronic_conditions_condition_override')}}
         {%- elif var('core_condition_override',none) is not none %}{{var('core_condition_override')}}
         {%- else %}{{ref('claims_preprocessing__condition')}}
-        {% endif %}
+        {%- endif %}
 
 
 

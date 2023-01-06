@@ -38,7 +38,7 @@ To import the Tuva Chronic Conditions package, you need to include the following
 ```
 packages:
   - package: tuva-health/tuva_chronic_conditions
-    version: 0.0.1
+    version: 0.0.2
 
 ```
 

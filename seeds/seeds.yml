@@ -21,4 +21,7 @@ seeds:
         description: The icd10 code
       - name: icd_10_cm_description
         description: The description for the icd10 code
+      - name: condition_column_name
+        description: The name of the column as it will appear in chronic_conditions_wide
+
    
